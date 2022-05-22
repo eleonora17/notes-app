@@ -4,10 +4,12 @@
     {   //verifica che siano già stati inseriti i dati necessari per creare la nuova smart_tv     
         $titolo = $_GET["titolo"]; 
         $contenuto = $_GET["contenuto"]; 
-        $newNota = new Note($titolo, $contenuto);
+        $dataCreazione = new DateTime();
+        $dataCreazione = $dataCreazione->format('Y-m-d H:i:s');
+        $id = Note::creaId();
+        $newNota = new Note($titolo, $contenuto, $id, $dataCreazione);
         $bool=NoteRepository::inserisci($newNota);
-        $id = $newNota->getId();
-        header("Location: index.php?action=showOne&action=showOne&id=$id");
+        header("Location: index.php?action=showOne&id=$id");
     }
     else
     {    

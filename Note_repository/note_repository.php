@@ -42,7 +42,7 @@ class NoteRepository {
                 $arrayNote[] = $objNote;
             }
         } catch (\Throwable $th) {
-            // throw $th;
+            throw $th;
         }
         return $arrayNote;
     }

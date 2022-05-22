@@ -4,20 +4,22 @@ class Note
 {
     private string $titolo;
     private string $contenuto;
-    private DateTime $dataCreazione;
+    private string $dataCreazione;
     private string $id;
     private static string $lastId = ''; //variabile che salva l'ultimo id creato, viene utilizzata per controllare che non ci siano id duplicati
 
-    public function __construct(string $titolo, string $contenuto)
+    public function __construct(string $titolo, string $contenuto, string $id, string $dataCreazione)
     {
         $this->titolo = $titolo;
         $this->contenuto = $contenuto;
-        $this->id =  Note::creaId(); //sto ancora pernsando a un modo per generare un id che abbia senso per ogni nota
-        $this->dataCreazione = new DateTime("NOW"); //prende la data e l'ora attuali dal server NTP di default
+        $this->id = $id;
+        $this->dataCreazione = $dataCreazione;
+        
     }
 
+
     //metodi statici
-    private static function creaId(){
+    public static function creaId(){
         $digits_needed=8;
         $random_number=''; // set up a blank string
         $count=0;
@@ -52,13 +54,15 @@ class Note
                 $titolo = $objNota->getTitolo();
                 $contenuto = $objNota->getContenuto();
                 $id = $objNota->getId();
+                $dataCreazione = $objNota->getDataCreazione();
                 echo "             
                 <tr>
                     <td> $titolo </td>
                     <td> $contenuto </td>
                     <td> $id </td>
-                    <td> <a href='./update.php?action=showOne&numero_seriale=$id'> modifica </a> </td> 
-                    <td> <a href='./delete.php?action=showOne&numero_seriale=$id'> elimina </a> </td>
+                    <td> $dataCreazione </td>
+                    <td> <a href='index.php?action=modify&id=$id'> modifica </a> </td> 
+                    <td> <a href='index.php?action=delete&id=$id'> elimina </a> </td>
                 </tr>
                ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv di quella riga
             }
@@ -81,13 +85,15 @@ class Note
               </thead>
               <tbody>
             <?php
+            $dataCreazione = $this->getDataCreazione();
             echo "
             <tr>
                 <td> $this->titolo </td>
                 <td> $this->contenuto </td>
                 <td> $this->id </td>
-                <td> <a href='./update.php?action=showOne&numero_seriale=$this->id'> modifica </a> </td>
-                <td> <a href='./delete.php?action=showOne&numero_seriale=$this->id'> elimina </a> </td>
+                <td> $dataCreazione </td>
+                <td> <a href='index.php?action=modify&id=$this->id'> modifica </a> </td>
+                <td> <a href='index.php?action=delete&id=$this->id'> elimina </a> </td>
             </tr>
            ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv mostrata 
            ?>
@@ -119,7 +125,7 @@ class Note
     public function setId(string $id){
         $this->id = $id;
     }
-    public function setDataCreazione(DateTime $dataCreazione){
+    public function setDataCreazione(string $dataCreazione){
         $this->dataCreazione = $dataCreazione;
     }
 }

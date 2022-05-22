@@ -1,20 +1,53 @@
-    <!--form per l'inserimento dei dati necessari alla creazione di una nuova nota-->
-    <!--PROVA CREAZIONE NOTA ==> funziona -->
+<?php
+    require './Models/Note.php';
+    //
+    if (!$_GET) 
+    {
+
+?>
+    <!-- form contenente il main menu -->
     <form method = "GET" action = "index.php">
-        <label for = "titolo">titolo</label><br>
-        <input type = "text" name = "titolo"><br>
-        <label for = "contenuto">contenuto</label><br>
-        <input type = "text" name = "contenuto"><br>
-        <input type = "submit">    
+        <label for="showAll"> Show all </label>
+        <input type="radio" name="action" id = "showAll" value = "showAll"> <br>
+        <label for="showOne"> Show one </label>
+        <input type="radio" name="action" id = "showOne" value = "showOne"> <br>
+        <label for="add"> Add </label>
+        <input type="radio" name="action" id = "add" value = "add"> <br>
+        <label for="delete"> Delete </label>
+        <input type="radio" name="action" id = "delete" value = "delete"> <br>
+        <label for="modify"> Modify </label>
+        <input type="radio" name="action" id = "modify" value = "modify"> <br>
+        <input type="submit">
     </form>
 
-    <?php
-        require 'Note.php';     
-        $titolo = $_GET["titolo"]; 
-        $contenuto = $_GET["contenuto"]; 
-        $newNote = new Note($titolo, $contenuto);
-        $bool=NoteRepository::inserisci($newNote);
-        echo "$bool";
-        //prova eliminazione per id ==> funzione
-        //$bool = NoteRepository::elimina("idk"); 
-    ?>
+<?php
+    }
+    else
+    {
+        //switch per il redirect alle varie pagine con le funzioni del menu
+        //VALUTARE SE USARE REQUIRE O HEADER
+        switch ($_GET["action"])
+        {
+            case "showAll":
+                //header("Location: ./showAll.php");
+                require('./Views/showAll.php'); 
+                break;
+            case "showOne": 
+                //header("Location: ./show.php");   
+                require('./Views/showOne.php');                   
+                break;
+            case "add":
+                //header("Location: ./Views/add.php");
+                require('./Views/add.php'); 
+                break;
+            case "delete":
+                //header("Location: ./delete.php");
+                require('./Views/delete.php'); 
+                break;
+            case "modify":
+                //header("Location: ./modify.php");
+                require('./Views/modify.php'); 
+                break;
+        }
+    }
+?>

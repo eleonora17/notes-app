@@ -127,11 +127,11 @@ class NoteRepository {
                 'dataCreazione' => $objNote->getDataCreazione(),
             ] )
             ->from( self::$fileName )
-            ->where( [ 'id' => $objNote->id ] )
+            ->where( [ 'id' => $objNote->getId() ] )
             ->trigger();
             $operazioneRiuscita = true;
         } catch (\Throwable $th) {
-            // throw $th;
+            throw $th;
         }
         return $operazioneRiuscita;
     }

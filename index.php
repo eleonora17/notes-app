@@ -15,8 +15,8 @@
         <input type="radio" name="action" id = "add" value = "add"> <br>
         <label for="delete"> Delete </label>
         <input type="radio" name="action" id = "delete" value = "delete"> <br>
-        <label for="modify"> Modify </label>
-        <input type="radio" name="action" id = "modify" value = "modify"> <br>
+        <label for="edit"> edit </label>
+        <input type="radio" name="action" id = "edit" value = "edit"> <br>
         <input type="submit">
     </form>
 
@@ -44,9 +44,9 @@
                 //header("Location: ./delete.php");
                 require('./Views/delete.php'); 
                 break;
-            case "modify":
-                //header("Location: ./modify.php");
-                require('./Views/modify.php'); 
+            case "edit":
+                //header("Location: ./edit.php");
+                require('./Views/edit.php'); 
                 break;
         }
     }

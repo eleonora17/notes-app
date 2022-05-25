@@ -10,7 +10,6 @@
         ?>
         <form method="GET" action="index.php">
             <input type="hidden" name="action" value="showOne">
-            <input type = "hidden" name = "action" value = "showOne">
             <label for="id"> Inserisci l'id della nota: </label>
             <input type="text" name="id" id="id">
             <input type="submit">

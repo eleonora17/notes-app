@@ -6,7 +6,6 @@ class Note
     private string $contenuto;
     private string $dataCreazione;
     private string $id;
-    private static string $lastId = ''; //variabile che salva l'ultimo id creato, viene utilizzata per controllare che non ci siano id duplicati
 
     public function __construct(string $titolo, string $contenuto, string $id, string $dataCreazione)
     {
@@ -28,14 +27,10 @@ class Note
             $random_number .= $random_digit;
             $count++;
         }
-        if (Note::$lastId == $random_number){
-            Note::creaId();
-        }else{
-            Note::$lastId = $random_number;
-            return $random_number;   
-        }
+        return $random_number;
     }
 
+    //le funzioni show sono provvisiore, le adatterò a css e html
     public static function showAll($note_array)
         {
             ?>
@@ -61,7 +56,7 @@ class Note
                     <td> $contenuto </td>
                     <td> $id </td>
                     <td> $dataCreazione </td>
-                    <td> <a href='index.php?action=modify&id=$id'> modifica </a> </td> 
+                    <td> <a href='index.php?action=edit&id=$id'> modifica </a> </td> 
                     <td> <a href='index.php?action=delete&id=$id'> elimina </a> </td>
                 </tr>
                ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv di quella riga
@@ -92,7 +87,7 @@ class Note
                 <td> $this->contenuto </td>
                 <td> $this->id </td>
                 <td> $dataCreazione </td>
-                <td> <a href='index.php?action=modify&id=$this->id'> modifica </a> </td>
+                <td> <a href='index.php?action=edit&id=$this->id'> modifica </a> </td>
                 <td> <a href='index.php?action=delete&id=$this->id'> elimina </a> </td>
             </tr>
            ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv mostrata 

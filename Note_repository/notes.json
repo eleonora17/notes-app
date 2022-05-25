@@ -1,11 +1,10 @@
 [
     {
-        "titolo": "nota 1",
-        "contenuto": "a\r\na\r\na\r\na\r\na\r\n",
+        "titolo": "modifica nota",
+        "contenuto": "nota modificata\r\n",
         "id": "43922482",
         "dataCreazione": "2022-05-22 15:34:07"
-    }
-,
+    },
     {
         "titolo": "nota 2",
         "contenuto": "",

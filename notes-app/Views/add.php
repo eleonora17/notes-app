@@ -1,7 +1,8 @@
 <?php
     //require 'smartTV.php';
     if(isset($_GET["titolo"]))
-    {   //verifica che siano già stati inseriti i dati necessari per creare la nuova smart_tv     
+    {   //verifica che siano già stati inseriti i dati necessari per creare la nuova smart_tv   
+          
         $titolo = $_GET["titolo"]; 
         $contenuto = $_GET["contenuto"]; 
         $dataCreazione = new DateTime();
@@ -9,7 +10,7 @@
         $id = Note::creaId();
         $newNota = new Note($titolo, $contenuto, $id, $dataCreazione);
         $bool=NoteRepository::inserisci($newNota);
-        header("Location: index.php?action=showOne&id=$id");
+        header("Location: index.php?action=showAll");
     }
     else
     {    
@@ -17,11 +18,9 @@
     <!--form per l'inserimento dei dati necessari alla creazione di una nuova smart_TV-->
     <form method = "GET" action = "index.php">
         <input type="hidden" name="action" value="add">
-        <label for = "titolo">Titolo</label><br>
-        <input type = "text" name = "titolo"><br>
-        <label for = "contenuto">contenuto</label><br>
-        <textarea name="contenuto"></textarea><br>
-        <input type = "submit">    
+        <input class="note-form" type="text" placeholder="Titolo nota" name="titolo"> <br>
+        <textarea class="note-form" placeholder="Contenuto nota" name="contenuto"></textarea> <br>
+        <input class="note-form" type="submit">
     </form>
 
 <?php

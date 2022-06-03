@@ -65,7 +65,24 @@ class Note
                 </tbody>
             </table>
         <?php
+    }
+
+    public static function searchByTitle(string $titolo)
+    {
+        $arry_note = NoteRepository::estrai_tutti();
+        $note_con_titolo = [];
+
+        foreach ($arry_note as $objNota){
+            /*if(str_contains($objNota->getTitolo(), $titolo)){
+                $note_con_titolo[] = $objNota;
+            } funzione supportata solo da php 8 in su*/
+            $xd = $objNota->getTitolo();
+            if(strpos($xd, $titolo, 0) !== false){
+                $note_con_titolo[] = $objNota;
+            }
         }
+        return $note_con_titolo;
+    }
         
     public function show(){
         ?>

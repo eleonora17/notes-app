@@ -1,0 +1,101 @@
+body{
+    background-color: #121212;
+    color: aliceblue;
+}
+
+img{
+    width: 24;
+    height: 24;
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.nota{
+    min-height: fit-content;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    width: 200px;
+    margin: 10px;
+    background-color: #292929;
+    border: 3px solid #1b1a1adc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+}
+
+.topbar{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #292929;
+}
+
+
+.topbar-item1{
+    flex-grow: 0;
+    margin: 5px;
+}
+.topbar-item2{
+    flex-grow: 0;
+    margin: 5px;
+}
+.topbar-item3{
+    flex-grow: 3;
+
+}
+.topbar-item4{
+    flex-grow: 0;
+
+}
+.topbar-item5{
+    flex-grow: 0.5;
+    margin: 5px;
+}
+
+
+.add-button{
+    margin-left: 10px;
+    border-radius: 100%;
+    background-color: #292929;
+    border: 3px solid #1b1a1adc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+    
+}
+
+.addlogo{
+    height: 50px;
+    width: 50px;
+}
+
+.searchbar{
+    width: 98%;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("./imgs/bsearchicon.png");
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.note-form{
+    color: aliceblue;
+    margin: 5px;
+    background-color: #292929;
+    width: 50%;
+}
+
+textarea.note-form{
+    height: 50%;
+}
+

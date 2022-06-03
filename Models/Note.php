@@ -32,39 +32,10 @@ class Note
 
     //le funzioni show sono provvisiore, le adatterò a css e html
     public static function showAll($note_array)
-        {
-            ?>
-              <table border = "1">
-                <thead>
-                    <tr>
-                        <th>Titolo</th>
-                        <th>Contenuto</th>
-                        <th>Id</th>                        
-                    </tr>
-                </thead>
-                <tbody>
-            <?php
-            foreach($note_array as $objNota)
-            {
-                $titolo = $objNota->getTitolo();
-                $contenuto = $objNota->getContenuto();
-                $id = $objNota->getId();
-                $dataCreazione = $objNota->getDataCreazione();
-                echo "             
-                <tr>
-                    <td> $titolo </td>
-                    <td> $contenuto </td>
-                    <td> $id </td>
-                    <td> $dataCreazione </td>
-                    <td> <a href='index.php?action=edit&id=$id'> modifica </a> </td> 
-                    <td> <a href='index.php?action=delete&id=$id'> elimina </a> </td>
-                </tr>
-               ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv di quella riga
-            }
-            ?>
-                </tbody>
-            </table>
-        <?php
+    {
+        foreach($note_array as $objNota){
+            $objNota->show();
+        }
     }
 
     public static function searchByTitle(string $titolo)
@@ -86,32 +57,19 @@ class Note
         
     public function show(){
         ?>
-            <table border = "1">
-              <thead>
-                  <tr>
-                      <th>Titolo</th>
-                      <th>Contenuto</th>
-                      <th>Id</th>
-                      <th></th>
-                  </tr>
-              </thead>
-              <tbody>
-            <?php
-            $dataCreazione = $this->getDataCreazione();
-            echo "
-            <tr>
-                <td> $this->titolo </td>
-                <td> $this->contenuto </td>
-                <td> $this->id </td>
-                <td> $dataCreazione </td>
-                <td> <a href='index.php?action=edit&id=$this->id'> modifica </a> </td>
-                <td> <a href='index.php?action=delete&id=$this->id'> elimina </a> </td>
-            </tr>
-           ";//gli ultimi due td sono dei link alle pagine update.php e delete.php relative alla smart_tv mostrata 
-           ?>
-                </tbody>
-            </table>
-            <?php
+            <div class="nota">
+                <?php
+                echo "
+                <h3>$this->titolo</h3>
+                <p>$this->contenuto</p>
+                ";
+                ?>
+                <div class="toolbar">
+                    <a href='index.php?action=delete&id=<?php echo "$this->id"?>'><img src="./styles/imgs/wtrashcan.png"></a>
+                    <a href='index.php?action=edit&id=<?php echo "$this->id"?>'><img src="./styles/imgs/wedit.png"></a>
+                </div>
+            </div>
+        <?php
         }
 
     //getter e setter

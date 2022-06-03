@@ -1,29 +1,34 @@
 <?php
     require './Models/Note.php';
-    //
-    if (!$_GET) 
-    {
-
 ?>
-    <!-- form contenente il main menu -->
-    <form method = "GET" action = "index.php">
-        <label for="showAll"> Show all </label>
-        <input type="radio" name="action" id = "showAll" value = "showAll"> <br>
-        <label for="showOne"> Show one </label>
-        <input type="radio" name="action" id = "showOne" value = "showOne"> <br>
-        <label for="add"> Add </label>
-        <input type="radio" name="action" id = "add" value = "add"> <br>
-        <label for="delete"> Delete </label>
-        <input type="radio" name="action" id = "delete" value = "delete"> <br>
-        <label for="edit"> edit </label>
-        <input type="radio" name="action" id = "edit" value = "edit"> <br>
-        <input type="submit">
-    </form>
 
-<?php
-    }
-    else
-    {
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="topbar-item1">
+        <a href="index.php?action=showAll"><img class="logo" src="./styles/imgs/wlogo.png"></a>
+    </div>
+    <div class="topbar-item2">
+        <h1>notes-app</h1>
+    </div>
+    <div class="topbar-item3">
+        <form method="GET" action="index.php">
+            <input type="hidden" name="action" value="showAll">
+            <input type="text" name="searchbar" placeholder="Cerca note" class="searchbar">
+        </form>   
+    </div>
+    <div class="topbar-item4">
+        <button class="add-button"><a href="./index.php?action=add"><img class="addlogo" src="./styles/imgs/wadd.png"></a></button>
+    </div>
+    <div class="topbar-item5">
+        <h1>Nuova nota</h1>
+    </div>
+</div>
+<?php        
         //switch per il redirect alle varie pagine con le funzioni del menu
         //VALUTARE SE USARE REQUIRE O HEADER
         switch ($_GET["action"])
@@ -49,5 +54,5 @@
                 require('./Views/edit.php'); 
                 break;
         }
-    }
 ?>
+</body>

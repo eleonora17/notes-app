@@ -1,0 +1,41 @@
+body{
+    background-color: #121212;
+    color: aliceblue;
+}
+
+.nota{
+    background-color: #292929;
+    border: 3px solid #1b1a1adc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+}
+
+.topbar{
+    background-color: #292929;
+}
+
+.add-button{
+    background-color: #292929;
+    border: 3px solid #1b1a1adc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);   
+}
+
+.theme-button{
+    color: aliceblue;
+    background-color: #292929;
+    border: 3px solid #1b1a1adc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+}
+
+.searchbar{
+    border: 2px solid #ccc;
+    background-color: white;
+    background-image: url("./imgs/dark/searchicon.png");
+}
+
+.note-form{
+    color: aliceblue;
+    background-color: #292929;
+}
+
+
+

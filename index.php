@@ -4,13 +4,16 @@
 
 <head>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link class="theme" rel="stylesheet" href="./styles/darktheme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./styles/script.js"></script>
 </head>
 
 <body>
 
 <div class="topbar">
     <div class="topbar-item1">
-        <a href="index.php?action=showAll"><img class="logo" src="./styles/imgs/wlogo.png"></a>
+        <a href="index.php?action=showAll"><img class="logo" src="./styles/imgs/dark/logo.png"></a>
     </div>
     <div class="topbar-item2">
         <h1>notes-app</h1>
@@ -22,10 +25,13 @@
         </form>   
     </div>
     <div class="topbar-item4">
-        <button class="add-button"><a href="./index.php?action=add"><img class="addlogo" src="./styles/imgs/wadd.png"></a></button>
+        <button class="add-button"><a href="./index.php?action=add"><img class="addlogo" src="./styles/imgs/dark/add.png"></a></button>
     </div>
     <div class="topbar-item5">
         <h1>Nuova nota</h1>
+    </div>
+    <div class="topbar-item6">
+        <button class="theme-button">Cambia tema</button>
     </div>
 </div>
 <?php        

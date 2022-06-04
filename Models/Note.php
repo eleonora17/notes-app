@@ -65,8 +65,8 @@ class Note
                 ";
                 ?>
                 <div class="toolbar">
-                    <a href='index.php?action=delete&id=<?php echo "$this->id"?>'><img src="./styles/imgs/wtrashcan.png"></a>
-                    <a href='index.php?action=edit&id=<?php echo "$this->id"?>'><img src="./styles/imgs/wedit.png"></a>
+                    <a href='index.php?action=delete&id=<?php echo "$this->id"?>'><img src="./styles/imgs/dark/trashcan.png"></a>
+                    <a href='index.php?action=edit&id=<?php echo "$this->id"?>'><img src="./styles/imgs/dark/edit.png"></a>
                 </div>
             </div>
         <?php

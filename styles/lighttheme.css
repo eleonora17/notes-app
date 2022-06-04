@@ -1,0 +1,41 @@
+body{
+    background-color: aliceblue;
+    color: #121212;
+}
+
+.nota{
+    background-color: #d8c9c9;
+    border: 3px solid #888080dc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+}
+
+.topbar{
+    background-color: #d8c9c9;
+}
+
+.add-button{
+    background-color: #d8c9c9;
+    border: 3px solid #888080dc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);   
+}
+
+.theme-button{
+    color: #121212;
+    background-color: #d8c9c9;
+    border: 3px solid #888080dc;
+    box-shadow: 0 8px 8px 0 rgba(61, 59, 59, 0.2), 0 6px 20px 0 rgba(218, 209, 209, 0.2);
+}
+
+.searchbar{
+    border: 2px solid #ccc;
+    background-color: white;
+    background-image: url("./imgs/dark/searchicon.png");
+}
+
+.note-form{
+    color: aliceblue;
+    background-color: #d8c9c9;
+}
+
+
+
